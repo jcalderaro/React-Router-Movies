@@ -5,7 +5,7 @@ const Movie = (props) => {
   const [movie, setMovie] = useState({});
  
   useEffect(() => {
-    const id = 1;
+    const id = props.match.params.id; //props is the props, match is banana word for match within components on F12, params is within match, and id is set on MovieList.js
     // change ^^^ that line and grab the id from the URL
     // You will NEED to add a dependency array to this effect hook
 
@@ -18,7 +18,7 @@ const Movie = (props) => {
           console.error(error);
         });
 
-  },[]);
+  },[props.match.params.id]);
   
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = () => {
